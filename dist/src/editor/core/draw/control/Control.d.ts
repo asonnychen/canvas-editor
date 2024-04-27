@@ -1,0 +1,54 @@
+import { IControlContext, IControlHighlight, IControlInitOption, IControlInstance, IGetControlValueOption, IGetControlValueResult, ISetControlExtensionOption, ISetControlProperties, ISetControlValueOption } from '../../../interface/Control';
+import { IElement, IElementPosition } from '../../../interface/Element';
+import { IRange } from '../../../interface/Range';
+import { Draw } from '../Draw';
+interface IMoveCursorResult {
+    newIndex: number;
+    newElement: IElement;
+}
+export declare class Control {
+    private controlBorder;
+    private draw;
+    private range;
+    private listener;
+    private eventBus;
+    private controlSearch;
+    private options;
+    private controlOptions;
+    private activeControl;
+    constructor(draw: Draw);
+    setHighlightList(payload: IControlHighlight[]): void;
+    computeHighlightList(): void;
+    renderHighlightList(ctx: CanvasRenderingContext2D, pageNo: number): void;
+    getDraw(): Draw;
+    filterAssistElement(elementList: IElement[]): IElement[];
+    getIsRangeCanCaptureEvent(): boolean;
+    getIsRangeInPostfix(): boolean;
+    getIsRangeWithinControl(): boolean;
+    getIsDisabledControl(): boolean;
+    getContainer(): HTMLDivElement;
+    getElementList(): IElement[];
+    getPosition(): IElementPosition | null;
+    getPreY(): number;
+    getRange(): IRange;
+    shrinkBoundary(context?: IControlContext): void;
+    getActiveControl(): IControlInstance | null;
+    initControl(): void;
+    destroyControl(): void;
+    repaintControl(curIndex?: number): void;
+    moveCursor(position: IControlInitOption): IMoveCursorResult;
+    removeControl(startIndex: number, context?: IControlContext): number | null;
+    removePlaceholder(startIndex: number, context?: IControlContext): void;
+    addPlaceholder(startIndex: number, context?: IControlContext): void;
+    setValue(data: IElement[]): number;
+    keydown(evt: KeyboardEvent): number | null;
+    cut(): number;
+    getValueByConceptId(payload: IGetControlValueOption): IGetControlValueResult;
+    setValueByConceptId(payload: ISetControlValueOption): void;
+    setExtensionByConceptId(payload: ISetControlExtensionOption): void;
+    setPropertiesByConceptId(payload: ISetControlProperties): void;
+    getList(): IElement[];
+    recordBorderInfo(x: number, y: number, width: number, height: number): void;
+    drawBorder(ctx: CanvasRenderingContext2D): void;
+}
+export {};
