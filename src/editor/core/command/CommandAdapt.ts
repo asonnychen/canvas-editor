@@ -230,6 +230,15 @@ export class CommandAdapt {
     })
   }
 
+  public focus() {    
+    const isCollapsed = this.range.getIsCollapsed()
+    this.draw.getCursor().drawCursor({
+      isFocus: true,
+      isBlink: true,
+      isShow: isCollapsed
+    })
+  }
+
   public blur() {
     this.range.clearRange()
     this.draw.getCursor().recoveryCursor()

@@ -64,6 +64,7 @@ window.onload = function () {
   console.log('实例: ', instance)
   // cypress使用
   Reflect.set(window, 'editor', instance)
+  // window.instance = instance
 
   // 菜单弹窗销毁
   window.addEventListener(
@@ -100,6 +101,7 @@ window.onload = function () {
   let isFirstClick = true
   let painterTimeout: number
   painterDom.onclick = function () {
+    console.log('***onclick***',1111)
     if (isFirstClick) {
       isFirstClick = false
       painterTimeout = window.setTimeout(() => {

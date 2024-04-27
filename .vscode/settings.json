@@ -38,9 +38,9 @@
     "src/editor/core/draw/particle/latex/utils"
   ],
   "typescript.tsdk": "node_modules/typescript/lib",
-  "editor.codeActionsOnSave": {
-    "source.fixAll.eslint": "explicit"
-  },
+  // "editor.codeActionsOnSave": {
+  //   "source.fixAll.eslint": "explicit"
+  // },
   "[typescript]": {
     "editor.defaultFormatter": "esbenp.prettier-vscode"
   },

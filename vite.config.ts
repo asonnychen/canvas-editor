@@ -4,7 +4,7 @@ import cssInjectedByJsPlugin from 'vite-plugin-css-injected-by-js'
 import * as path from 'path'
 
 export default defineConfig(({ mode }) => {
-  const name = 'canvas-editor'
+  const name = 'yea-canvas-editor'
   if (mode === 'lib') {
     return {
       plugins: [
@@ -31,7 +31,7 @@ export default defineConfig(({ mode }) => {
         },
         rollupOptions: {
           output: {
-            sourcemap: true
+            sourcemap: false
           }
         }
       }
