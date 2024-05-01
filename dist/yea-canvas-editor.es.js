@@ -14866,6 +14866,7 @@ class Command {
     this.executeChangeImageDisplay = adapt.changeImageDisplay.bind(adapt);
     this.executePageMode = adapt.pageMode.bind(adapt);
     this.executePageScaleRecovery = adapt.pageScaleRecovery.bind(adapt);
+    this.executePageScaleSet = adapt.pageScaleSet.bind(adapt);
     this.executePageScaleMinus = adapt.pageScaleMinus.bind(adapt);
     this.executePageScaleAdd = adapt.pageScaleAdd.bind(adapt);
     this.executePaperSize = adapt.paperSize.bind(adapt);
@@ -16843,6 +16844,13 @@ class CommandAdapt {
     if (scale !== 1) {
       this.draw.setPageScale(1);
     }
+  }
+  pageScaleSet(scale) {
+    if (scale >= 5 && scale <= 30) {
+      this.draw.setPageScale(Math.max(Math.min(scale, 30), 5));
+      return true;
+    }
+    return false;
   }
   pageScaleMinus() {
     const { scale } = this.options;
