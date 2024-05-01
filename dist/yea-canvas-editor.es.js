@@ -16846,8 +16846,9 @@ class CommandAdapt {
     }
   }
   pageScaleSet(scale) {
-    if (scale >= 5 && scale <= 30) {
-      this.draw.setPageScale(Math.max(Math.min(scale, 30), 5));
+    const nextScale = scale * 10;
+    if (nextScale >= 5 && nextScale <= 30) {
+      this.draw.setPageScale(Math.max(Math.min(nextScale, 30), 5));
       return true;
     }
     return false;
