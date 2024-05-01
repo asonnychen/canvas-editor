@@ -70,6 +70,7 @@ export class Command {
   public executeChangeImageDisplay: CommandAdapt['changeImageDisplay']
   public executePageMode: CommandAdapt['pageMode']
   public executePageScaleRecovery: CommandAdapt['pageScaleRecovery']
+  public executePageScaleSet: CommandAdapt['pageScaleSet']
   public executePageScaleMinus: CommandAdapt['pageScaleMinus']
   public executePageScaleAdd: CommandAdapt['pageScaleAdd']
   public executePaperSize: CommandAdapt['paperSize']
@@ -188,6 +189,7 @@ export class Command {
     // 页面模式、页面缩放、纸张大小、纸张方向、页边距
     this.executePageMode = adapt.pageMode.bind(adapt)
     this.executePageScaleRecovery = adapt.pageScaleRecovery.bind(adapt)
+    this.executePageScaleSet = adapt.pageScaleSet.bind(adapt)
     this.executePageScaleMinus = adapt.pageScaleMinus.bind(adapt)
     this.executePageScaleAdd = adapt.pageScaleAdd.bind(adapt)
     this.executePaperSize = adapt.paperSize.bind(adapt)

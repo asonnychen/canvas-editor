@@ -68,6 +68,7 @@ export declare class Command {
     executeChangeImageDisplay: CommandAdapt['changeImageDisplay'];
     executePageMode: CommandAdapt['pageMode'];
     executePageScaleRecovery: CommandAdapt['pageScaleRecovery'];
+    executePageScaleSet: CommandAdapt['pageScaleSet'];
     executePageScaleMinus: CommandAdapt['pageScaleMinus'];
     executePageScaleAdd: CommandAdapt['pageScaleAdd'];
     executePaperSize: CommandAdapt['paperSize'];

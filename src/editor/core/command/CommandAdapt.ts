@@ -230,7 +230,7 @@ export class CommandAdapt {
     })
   }
 
-  public focus() {    
+  public focus() {
     const isCollapsed = this.range.getIsCollapsed()
     this.draw.getCursor().drawCursor({
       isFocus: true,
@@ -2171,6 +2171,14 @@ export class CommandAdapt {
     if (scale !== 1) {
       this.draw.setPageScale(1)
     }
+  }
+
+  public pageScaleSet(scale: number): boolean {
+    if (scale >= 5 && scale <= 30) {
+      this.draw.setPageScale(Math.max(Math.min(scale, 30), 5))
+      return true
+    }
+    return false
   }
 
   public pageScaleMinus() {

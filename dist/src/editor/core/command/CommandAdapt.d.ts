@@ -113,6 +113,7 @@ export declare class CommandAdapt {
     getKeywordRangeList(payload: string): IRange[];
     pageMode(payload: PageMode): void;
     pageScaleRecovery(): void;
+    pageScaleSet(): boolean;
     pageScaleMinus(): void;
     pageScaleAdd(): void;
     paperSize(width: number, height: number): void;
