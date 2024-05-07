@@ -78,7 +78,7 @@ export class CanvasEvent {
       this.mouseleave.bind(this)
     )
     this.pageContainer.addEventListener('mousemove', this.mousemove.bind(this))
-    this.pageContainer.addEventListener('dblclick', this.dblclick.bind(this))
+    // this.pageContainer.addEventListener('dblclick', this.dblclick.bind(this))
     this.pageContainer.addEventListener('dragover', this.dragover.bind(this))
     this.pageContainer.addEventListener('drop', this.drop.bind(this))
     threeClick(this.pageContainer, this.threeClick.bind(this))
@@ -161,7 +161,7 @@ export class CanvasEvent {
   }
 
   public dblclick(evt: MouseEvent) {
-    click.dblclick(this, evt)
+    // click.dblclick(this, evt)
   }
 
   public threeClick() {
