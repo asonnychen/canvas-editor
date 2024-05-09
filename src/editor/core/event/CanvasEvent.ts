@@ -161,7 +161,7 @@ export class CanvasEvent {
   }
 
   public dblclick(evt: MouseEvent) {
-    // click.dblclick(this, evt)
+    click.dblclick(this, evt)
   }
 
   public threeClick() {

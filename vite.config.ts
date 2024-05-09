@@ -24,6 +24,8 @@ export default defineConfig(({ mode }) => {
         }
       ],
       build: {
+        target: 'es2015',
+        minify: false,
         lib: {
           name,
           fileName: name,
